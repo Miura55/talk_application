@@ -1,16 +1,21 @@
 #-*- coding: utf8 -*-
 import pya3rt
-import json
 
 apikey = "K5bYil4Wyd3mYuPgdy1Zi9u42GhR68LA"
 client = pya3rt.TalkClient(apikey)
 
-while True:
+def talk():
     say = input("you: ")
     if say == 'end':
-        print('seri: ではまた')
-        break
+        return('ではまた')
     else:
         ans_json = client.talk(say)
         ans = ans_json['results'][0]['reply']
-        print('seri:', ans)
+        return(ans)
+
+if __name__ == '__main__':
+    while True:
+        vo = talk()
+        print('Seri:', vo)
+        if vo == 'ではまた':
+            break

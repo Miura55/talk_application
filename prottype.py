@@ -35,17 +35,12 @@ Entry1.pack()
 Entry1_value = Entry1.get()
 print(Entry1_value)
 
-# Buttonを設置してみる（文字が消えるボタン）
-Button1 = tk.Button(text=u'何か起こるボタン', width=20)
-Button1.bind("<Button-1>", deleteEntry)
-Button1.pack()
-
 # Buttonを設置してみる（文字を表示するボタン）
-Button2 = tk.Button(text=u'何か起こるボタン', width=20, command=lambda: showMessage(Entry1.get()))        # 関数に引数を渡す場合は、commandオプションとlambda式を使う
-Button2.pack()
+Show_Button = tk.Button(text=u'何か起こるボタン', width=20, command=lambda: showMessage(Entry1.get()))        # 関数に引数を渡す場合は、commandオプションとlambda式を使う
+Show_Button.pack()
 
 # リストボックスを設置してみる
-ListBox1 = tk.Listbox()
+ListBox1 = tk.Listbox(width=55, height=14)
 ListBox1.pack()
 
 root.mainloop()
