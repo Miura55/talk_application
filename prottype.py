@@ -2,6 +2,10 @@
 import sys
 import tkinter as tk
 import tkinter.messagebox as tkm
+import pya3rt
+
+apikey = "YOUR_API_KEY"
+client = pya3rt.TalkClient(apikey)
 
 root = tk.Tk()
 
@@ -15,7 +19,16 @@ def addList(text):
     mysay = 'you: ' + text
     print(mysay)
     ListBox1.insert(tk.END, mysay)
+    Seri = 'Seri: ' + talk(text)
+    ListBox1.insert(tk.END, Seri)
 
+def talk(say):
+    if say == 'end':
+        return('ではまた')
+    else:
+        ans_json = client.talk(say)
+        ans = ans_json['results'][0]['reply']
+        return(ans)
 
 # ラベルを使って文字を画面上に出す
 Static1 = tk.Label(text=u'▼　Entryだぞ！　▼')
