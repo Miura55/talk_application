@@ -4,7 +4,7 @@ import tkinter as tk
 import tkinter.messagebox as tkm
 import pya3rt
 
-apikey = "YOUR_API_KEY"
+apikey = "K5bYil4Wyd3mYuPgdy1Zi9u42GhR68LA"
 client = pya3rt.TalkClient(apikey)
 
 root = tk.Tk()
