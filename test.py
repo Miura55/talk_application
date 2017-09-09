@@ -1,7 +1,7 @@
 #-*- coding: utf8 -*-
 import pya3rt
 
-apikey = "K5bYil4Wyd3mYuPgdy1Zi9u42GhR68LA"
+apikey = "YOUR_API_KEY"
 client = pya3rt.TalkClient(apikey)
 
 def talk():
